@@ -7,6 +7,8 @@
                     <div class="row">
                         <div class="col-lg-6">
 
+                            <?= form_error('menu','<div class="alert alert-danger" role="alert">','</div>');?>
+                            <?= $this->session->flashdata('message');?>
                             <a href="" class="btn btn-primary" data-toggle="modal" data-target="#newMenuModal">Add new menu</a>
 
                             <table class="table table-hover">
@@ -45,7 +47,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="newMenuModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="newMenuModalLabel">Add new menu</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
