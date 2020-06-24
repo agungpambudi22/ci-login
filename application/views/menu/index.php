@@ -7,9 +7,9 @@
                     <div class="row">
                         <div class="col-lg-6">
 
-                            <?= form_error('menu','<div class="alert alert-danger" role="alert">','</div>');?>
-                            <?= $this->session->flashdata('message');?>
-                            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#newMenuModal">Add new menu</a>
+                            <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
+                            <?= $this->session->flashdata('message'); ?>
+                            <a href="" class="btn btn-primary addMenuButton mb-3" data-toggle="modal" data-target="#newMenuModal">Add new menu</a>
 
                             <table class="table table-hover">
                                 <thead>
@@ -26,8 +26,8 @@
                                             <th scope="row"><?= $i; ?></th>
                                             <td><?= $m['menu']; ?></td>
                                             <td>
-                                                <a class="badge badge-warning" href="">edit</a>
-                                                <a class="badge badge-danger" href="">delete</a>
+                                                <a class="badge badge-warning editMenuButton" href="" data-toggle="modal" data-target="#newMenuModal">edit</a>
+                                                <a class="badge badge-danger" href="<?= base_url('menu/delete/' . $m['id']) ?>">delete</a>
                                             </td>
                                         </tr>
                                         <?php $i++; ?>
