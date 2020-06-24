@@ -14,7 +14,7 @@ $(function () {
         const id = $(this).data('id');
 
         $.ajax({
-            url: 'http://localhost/ci-login/menu/getubah',
+            url: 'http://localhost/ci-login/menu/get_edit',
             data: { id: id },
             method: 'post',
             dataType: 'json',
