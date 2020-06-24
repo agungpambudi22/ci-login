@@ -26,7 +26,7 @@
                                             <th scope="row"><?= $i; ?></th>
                                             <td><?= $m['menu']; ?></td>
                                             <td>
-                                                <a class="badge badge-warning editMenuButton" href="" data-toggle="modal" data-target="#newMenuModal">edit</a>
+                                                <a class="badge badge-warning editMenuButton" href="" data-toggle="modal" data-target="#newMenuModal" data-id="<?= $m['id'] ?>">edit</a>
                                                 <a class="badge badge-danger" href="<?= base_url('menu/delete/' . $m['id']) ?>">delete</a>
                                             </td>
                                         </tr>
@@ -52,16 +52,17 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="<?= base_url('menu') ?>" method="post">
-                                <div class="modal-body">
+                            <div class="modal-body">
+                                <form action="<?= base_url('menu') ?>" method="post">
+                                    <input type="hidden" name="id" id="id">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="menu" name="menu" placeholder="Menu name">
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Add</button>
-                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </div>
                             </form>
                         </div>
                     </div>

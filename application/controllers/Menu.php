@@ -30,4 +30,26 @@ class Menu extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data deleted successfully</div>');
         redirect('menu');
     }
+
+    public function getubah()
+    {
+        $id = $_POST['id'];
+        $data = $this->db->get_where('user_menu', ['id' => $id])->row_array();
+        $data = json_encode($data);
+        echo $data;
+    }
+
+    public function edit()
+    {
+        $data = [
+            'menu' => $this->input->post('menu')
+        ];
+        $id = $this->input->post('id');
+
+        $this->db->where('id', $id);
+        $this->db->update('user_menu', $data);
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data updated successfully</div>');
+        redirect('menu');
+    }
 }
