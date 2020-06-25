@@ -33,6 +33,7 @@ $(function () {
         $('#url').val("");
         $('#icon').val("");
         $('#is_active').val("1");
+        $('#is_active').attr('checked',"");
     });
 
     $('.editSubMenuButton').on('click', function () {
@@ -49,10 +50,13 @@ $(function () {
             success: function (data) {
                 $('#id').val(data.id);
                 $('#title').val(data.title);
-                $('#menu_id').val(data.menu);
+                $('#menu_id').val(data.menu_id);
                 $('#url').val(data.url);
                 $('#icon').val(data.icon);
-                $('#is_active').val(data.is_active);
+                if (data.is_active != 1) {
+                    $('#is_active').removeAttr('checked');
+                    $('#is_active').val(data.is_active);
+                }                 
             }
         });
 
