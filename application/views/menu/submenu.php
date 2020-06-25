@@ -15,7 +15,7 @@
 
                             <?= $this->session->flashdata('message'); ?>
 
-                            <a href="" class="btn btn-primary addMenuButton mb-3" data-toggle="modal" data-target="#newSubmenuModal">Add new submenu</a>
+                            <a href="" class="btn btn-primary addSubMenuButton mb-3" data-toggle="modal" data-target="#newSubmenuModal">Add new submenu</a>
 
                             <table class="table table-hover">
                                 <thead>
@@ -46,7 +46,7 @@
                                                 <?php endif; ?>
                                             </td>
                                             <td>
-                                                <a class="badge badge-warning editMenuButton" href="" data-toggle="modal" data-target="#newMenuModal" data-id="<?= $sm['id'] ?>">edit</a>
+                                                <a class="badge badge-warning editSubMenuButton" href="" data-toggle="modal" data-target="#newSubmenuModal" data-id="<?= $sm['id'] ?>">edit</a>
                                                 <a class="badge badge-danger" href="<?= base_url('menu/deleteSubMenu/' . $sm['id']) ?>">delete</a>
                                             </td>
                                         </tr>

@@ -7,7 +7,7 @@ $(function () {
     });
 
     $('.editMenuButton').on('click', function () {
-        $('#newMenuModalLabel').html('Edit data menu');
+        $('#newMenuModalLabel').html('Edit menu data');
         $('.modal-footer button[type=submit]').html('Edit');
         $('.modal-body form').attr('action', 'http://localhost/ci-login/menu/edit')
 
@@ -23,6 +23,25 @@ $(function () {
                 $('#id').val(data.id);
             }
         });
+    });
+
+    $('.addSubMenuButton').on('click', function () {
+        $('#newSubMenuModalLabel').html('Add new submenu');
+        $('.modal-footer button[type=submit]').html('Add');
+        $('#title').val("");
+        $('#menu_id').val("");
+        $('#url').val("");
+        $('#icon').val("");
+        $('#is_active').val("1");
+    });
+
+    $('.editSubMenuButton').on('click', function () {
+        $('#newSubMenuModalLabel').html('Edit submenu data');
+        $('.modal-footer button[type=submit]').html('Edit');
+        $('.modal-body form').attr('action', 'http://localhost/ci-login/menu/editSubMenu')
+
+        const id = $(this).data('id');
+
     });
 
 });
