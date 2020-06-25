@@ -113,4 +113,30 @@ class Menu extends CI_Controller
         echo $data;
         
     }
+
+    public function editSubMenu()
+    {
+        // $is_active = 0;
+        // if(isset($_POST['is_active'])){
+        //     $is_active = 1;
+        // }else{
+        //     $is_active = 0;
+        // }
+
+        $data = [
+            'menu_id' => $this->input->post('menu_id'),
+            'title' => $this->input->post('title'),
+            'url' => $this->input->post('url'),
+            'icon' => $this->input->post('icon'),
+            'is_active' => $is_active
+        ];
+
+        $id = $this->input->post('id');
+
+        $this->db->where('id',$id);
+        $this->db->update('user_sub_menu', $data);
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Submenu edited successfully</div>');
+        redirect('menu/submenu');
+    }
 }

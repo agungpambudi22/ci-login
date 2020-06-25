@@ -93,7 +93,7 @@
                                         <input type="text" class="form-control" id="icon" name="icon" placeholder="Submenu icon">
                                     </div>
                                     <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input" value="1" id="is_active" name="is_active" checked>
+                                        <input type="checkbox" class="form-check-input" value="1" id="is_active" name="is_active">
                                         <label class="form-check-label" for="is_active">is active</label>
                                     </div>
                             </div>
