@@ -96,4 +96,21 @@ class Menu extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Submenu deleted successfully</div>');
         redirect('menu/submenu');
     }
+
+    public function get_editSubMenu()
+    {
+        $id = $_POST['id'];
+
+        $query = "SELECT `user_sub_menu`.*,`user_menu`.`menu`
+                  FROM `user_sub_menu` JOIN `user_menu`
+                  ON `user_sub_menu`.`menu_id` = `user_menu`.`id`
+                  WHERE `user_sub_menu`.`id` = $id  
+                 ";
+
+        
+        $data = $this->db->query($query)->row_array();
+        $data = json_encode($data);
+        echo $data;
+        
+    }
 }

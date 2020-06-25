@@ -41,6 +41,20 @@ $(function () {
         $('.modal-body form').attr('action', 'http://localhost/ci-login/menu/editSubMenu')
 
         const id = $(this).data('id');
+        $.ajax({
+            url: 'http://localhost/ci-login/menu/get_editSubMenu',
+            data: { id: id },
+            method: 'post',
+            dataType: 'json',
+            success: function (data) {
+                $('#id').val(data.id);
+                $('#title').val(data.title);
+                $('#menu_id').val(data.menu);
+                $('#url').val(data.url);
+                $('#icon').val(data.icon);
+                $('#is_active').val(data.is_active);
+            }
+        });
 
     });
 
